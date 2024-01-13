@@ -20,7 +20,7 @@ df['SMA(Volume) 10D'] = df['Volume'].rolling(window=10, min_periods=1).mean()
 #Since the window size is 10, SMA of first 9 elements must be NAN
 df.iloc[:9, 7:] = np.nan
 
-# Assign NaN values for SMA for those input is NAN
+# Assign NAN values for SMA for those input is NAN
 df.loc[df['Open'].isna(), 'SMA(Open) 10D'] = np.nan
 df.loc[df['High'].isna(), 'SMA(High) 10D'] = np.nan
 df.loc[df['Low'].isna(), 'SMA(Low) 10D'] = np.nan
